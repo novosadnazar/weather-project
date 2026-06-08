@@ -33,6 +33,7 @@
   font-size: 14px; 
   font-weight: 500;
   line-height: normal;
+  transition: color 0.5s ease;
 }
 
 .navLink:hover {
@@ -44,3 +45,20 @@
   align-items: center;
   gap: 27px;
 }
+
+.headerBtn {
+padding: 10px 20px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 10px;
+background-color: #FFB36C;
+transition: background-color 0.5s ease;
+}
+
+.headerBtn:hover {
+  color: #ffffff;
+  background-color: #f68b26;
+
+}
+

@@ -1,0 +1,101 @@
+
+.backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+
+.modal {
+
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px; 
+  
+  
+  position: relative; 
+  
+
+  width: 100%;
+  max-width: 450px; 
+  margin: 0 20px;   
+  
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  
+ 
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+
+@keyframes modalFadeIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modalTitle{
+  color: #000;
+font-family: "Montserrat Alternates";
+font-size: 20px;
+font-weight: 500;
+line-height: normal;
+
+}
+
+.modalLabel{
+  color: #000;
+font-family: Montserrat;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+display: flex;
+flex-direction: column;
+
+}
+
+
+.modalInput{
+  
+}
+
+.modalBtn {
+padding: 10px 30px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 10px;
+background-color: #FFB36C;
+transition: background-color 0.5s ease;
+
+}
+
+.modalBtn:hover {
+  color: #ffffff;
+  background-color: #f68b26;
+
+}
+
+.modalText{
+  color: #000;
+font-family: Montserrat;
+font-size: 8px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+

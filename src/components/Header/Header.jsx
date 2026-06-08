@@ -2,7 +2,9 @@ import style from "./Header.module.css";
 import headerLogo from "../../assets/img/header-logo.png";
 import headerUser from "../../assets/img/header-user.png";
 
-const Header = () => {
+const Header = ({ onToggle }) => {
+    
+
   return (
     <>
       <header className={style.header}>
@@ -33,7 +35,7 @@ const Header = () => {
 
           <ul className={style.headerList}>
             <li className={style.headerItem}>
-              <button type="button" className={style.headerBtn}>
+              <button type="button" className={style.headerBtn} onClick={onToggle}>
                 Sign Up
               </button>
             </li>
@@ -43,6 +45,8 @@ const Header = () => {
           </ul>
         </div>
       </header>
+
+      
     </>
   );
 };
