@@ -3,6 +3,7 @@ import './App.css'
 import "./index.css"
 import Header from './components/Header/Header'
 import Modal from './components/Modal/Modal';
+import Hero from './components/Hero/Hero';
 
 function App() {
 const [open, setOpen] = useState(false)
@@ -15,6 +16,7 @@ const [open, setOpen] = useState(false)
     <>
       <Header onToggle={handleToggleModal} />
       {open && <Modal onToggle={handleToggleModal} />}
+      <Hero />
     </>
   );
   
