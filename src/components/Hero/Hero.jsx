@@ -10,7 +10,9 @@ const Hero = () => {
   return (
     <section
       className={style.hero}
-      style={{ backgroundImage: `url(${heroBg})` }}
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.48),rgba(0, 0, 0, 0.48)), url(${heroBg})`,
+      }}
     >
       <div className={`container ${style.heroContainer}`}>
         <h1 className={style.heroTitle}>Weather dashboard</h1>
@@ -28,8 +30,15 @@ const Hero = () => {
           </span>
         </div>
         <div className={style.heroBoxe}>
-                  <input type="text" placeholder="Search location..." className={style.heroInput} />
-                  <button type="submit" className={style.heroButton} > <FiSearch /></button>
+          <input
+            type="text"
+            placeholder="Search location..."
+            className={style.heroInput}
+          />
+          <button type="submit" className={style.heroButton}>
+            {" "}
+            <FiSearch />
+          </button>
         </div>
       </div>
     </section>

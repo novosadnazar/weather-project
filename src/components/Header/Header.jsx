@@ -1,65 +1,9 @@
-// import style from "./Header.module.css";
-// import headerLogo from "../../assets/img/header-logo.png";
-// import headerUser from "../../assets/img/header-user.png";
-
-// const Header = ({ onToggle }) => {
-    
-
-//   return (
-//     <>
-//       <header className={style.header}>
-//         <div className={`container ${style.headerContainer}`}>
-//           <a href="./index.html" className={style.headerLink}>
-//             <img src={headerLogo} alt="logo" className={style.headerLogo} />
-//           </a>
-
-//           <nav className={style.headerNav}>
-//             <ul className={style.navList}>
-//               <li className={style.navItem}>
-//                 <a href="#" className={style.navLink}>
-//                   Who we are
-//                 </a>
-//               </li>
-//               <li className={style.navItem}>
-//                 <a href="#" className={style.navLink}>
-//                   Contacts
-//                 </a>
-//               </li>
-//               <li className={style.navItem}>
-//                 <a href="#" className={style.navLink}>
-//                   Menu
-//                 </a>
-//               </li>
-//             </ul>
-//           </nav>
-
-//           <ul className={style.headerList}>
-//             <li className={style.headerItem}>
-//               <button type="button" className={style.headerBtn} onClick={onToggle}>
-//                 Sign Up
-//               </button>
-//             </li>
-//             <li className={style.headerItem}>
-//               <img src={headerUser} alt="user-logo" />
-//             </li>
-//           </ul>
-//         </div>
-//       </header>
-
-      
-//     </>
-//   );
-// };
-
-// export default Header;
-
-
 import { useState } from "react";
 import style from "./Header.module.css";
 import headerLogo from "../../assets/img/header-logo.png";
 import headerUser from "../../assets/img/header-user.png";
 
-const Header = ({ onToggle }) => {
+const Header = ({ onToggle, username }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -73,12 +17,10 @@ const Header = ({ onToggle }) => {
   return (
     <header className={style.header}>
       <div className={`container ${style.headerContainer}`}>
-        {/* Логотип сайту */}
         <a href="./index.html" className={style.headerLink}>
           <img src={headerLogo} alt="logo" className={style.headerLogo} />
         </a>
 
-        {/* Навігаційне меню */}
         <nav
           className={`${style.headerNav} ${isMenuOpen ? style.navOpen : ""}`}
         >
@@ -99,18 +41,24 @@ const Header = ({ onToggle }) => {
               </a>
             </li>
 
-            {/* ЦІ ЕЛЕМЕНТИ БУДЕ ВИДНО ТІЛЬКИ В МОБІЛЬНОМУ БУРГЕРІ */}
+         
             <li className={style.mobileOnlyItem}>
-              <button
-                type="button"
-                className={style.headerBtn}
-                onClick={() => {
-                  onToggle();
-                  handleLinkClick();
-                }}
-              >
-                Sign Up
-              </button>
+              {username ? (
+                <div className={style.heroMobileGreeting}>
+                  Hello, <span className={style.heroUserName}>{username}!</span>
+                </div>
+              ) : (
+                <button
+                  type="button"
+                  className={style.headerBtn}
+                  onClick={() => {
+                    onToggle();
+                    handleLinkClick();
+                  }}
+                >
+                  Sign Up
+                </button>
+              )}
             </li>
             <li className={style.mobileOnlyItem}>
               <div className={style.mobileUserWrapper}>
@@ -121,23 +69,26 @@ const Header = ({ onToggle }) => {
           </ul>
         </nav>
 
-        {/* Права частина хедера (для десктопа + кнопка бургера) */}
         <ul className={style.headerList}>
-          {/* ЦІ ДВА ЕЛЕМЕНТИ СХОВАЮТЬСЯ НА МОБІЛЦІ */}
-          <li className={`${style.headerItem} ${style.desktopOnly}`}>
-            <button
-              type="button"
-              className={style.headerBtn}
-              onClick={onToggle}
-            >
-              Sign Up
-            </button>
+          <li className={style.headerItem}>
+            {username ? (
+              <div className={style.desktopGreeting}>
+                Hello, <span className={style.userName}>{username}!</span>
+              </div>
+            ) : (
+              <button
+                type="button"
+                className={style.headerBtn}
+                onClick={onToggle}
+              >
+                Sign Up
+              </button>
+            )}
           </li>
-          <li className={`${style.headerItem} ${style.desktopOnly}`}>
+          <li className={style.headerItem }>
             <img src={headerUser} alt="user-logo" />
           </li>
 
-          {/* Кнопка-бургер (показується тільки на мобілці) */}
           <li className={style.burgerItem}>
             <button
               type="button"
