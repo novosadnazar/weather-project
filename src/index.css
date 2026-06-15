@@ -1,5 +1,5 @@
 
-/* Базовий контейнер (Мобільна версія за замовчуванням) */
+
 .container {
   width: 100%;
   margin-left: auto;
@@ -13,7 +13,7 @@
 }
 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 704px) {
   .container {
 
     max-width: 704px;
@@ -21,7 +21,7 @@
 }
 
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1180px) {
   .container {
 
     max-width: 1180px;
