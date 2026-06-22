@@ -6,6 +6,7 @@ import Header from "./components/Header/Header";
 import Modal from "./components/Modal/Modal";
 import Hero from "./components/Hero/Hero";
 import CardList from "./components/CardList/CardList";
+import Slider from "./components/Slider/Slider";
 import Footer from "./components/Footer/Footer";
 
 const API_KEY = "da90f2e46287491baefdd051c0002a45";
@@ -163,6 +164,7 @@ function App() {
         )}
       </main>
 
+      <Slider />
       <Footer />
     </>
   );
