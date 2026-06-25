@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import "./App.css";
 import "./index.css";
@@ -8,6 +7,8 @@ import Hero from "./components/Hero/Hero";
 import CardList from "./components/CardList/CardList";
 import Slider from "./components/Slider/Slider";
 import Footer from "./components/Footer/Footer";
+import NewsPart from "./components/NewsPart/NewsPart";
+import Gallery from "./components/Gallery/Gallery";
 
 const API_KEY = "da90f2e46287491baefdd051c0002a45";
 
@@ -15,8 +16,7 @@ function App() {
   const [open, setOpen] = useState(false);
   const [username, setUsername] = useState("");
   const [cityName, setCityName] = useState("");
-  const [selectedCity, setSelectedCity] = useState(null); 
-
+  const [selectedCity, setSelectedCity] = useState(null);
 
   const [cities, setCities] = useState(() => {
     const savedCities = localStorage.getItem("weather_cities");
@@ -26,7 +26,6 @@ function App() {
   const handleToggleModal = () => {
     setOpen((prev) => !prev);
   };
-
 
   const handleHeroSearch = (newCity) => {
     if (!newCity.trim()) return;
@@ -42,11 +41,9 @@ function App() {
     setCityName(newCity);
   };
 
-  
   useEffect(() => {
     localStorage.setItem("weather_cities", JSON.stringify(cities));
   }, [cities]);
-
 
   useEffect(() => {
     if (!cityName) return;
@@ -60,9 +57,9 @@ function App() {
       })
       .then((data) => {
         const parsedCity = parseWeatherData(data);
-       
+
         setCities((prev) => [parsedCity, ...prev]);
-   
+
         setCityName("");
       })
       .catch((error) => {
@@ -71,7 +68,6 @@ function App() {
       });
   }, [cityName]);
 
-  
   const handleRefreshCity = (name) => {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${name}&units=metric&appid=${API_KEY}`
@@ -90,18 +86,15 @@ function App() {
       .catch((error) => alert(error.message));
   };
 
-
   const handleDeleteCity = (id) => {
     setCities((prev) => prev.filter((city) => city.id !== id));
-  
+
     if (selectedCity && selectedCity.id === id) {
       setSelectedCity(null);
     }
   };
 
- 
   const parseWeatherData = (data) => {
-    
     const utcDate = new Date();
     const localTimeMillis =
       utcDate.getTime() +
@@ -148,7 +141,6 @@ function App() {
 
       <Hero city={handleHeroSearch} />
 
-     
       <main style={{ padding: "0 20px", maxWidth: "1200px", margin: "0 auto" }}>
         {cities.length === 0 ? (
           <p style={{ textAlign: "center", margin: "40px 0", color: "#666" }}>
@@ -164,6 +156,9 @@ function App() {
         )}
       </main>
 
+      
+      <NewsPart selectedCity={selectedCity} weatherDetails={selectedCity} />
+<Gallery />
       <Slider />
       <Footer />
     </>

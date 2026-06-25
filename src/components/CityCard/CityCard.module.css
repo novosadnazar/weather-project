@@ -27,7 +27,7 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
 }
 
-/* Локація (Місто та Країна) */
+
 .weatherHeader {
   width: 100%;
   display: flex;
@@ -37,17 +37,17 @@
 }
 
 .cityName {
-  font-size: 14px; /* Твій розмір тексту */
+  font-size: 14px; 
   font-weight: 600;
   margin: 0;
 }
 
 .country {
-  font-size: 14px; /* Твій розмір тексту */
+  font-size: 14px; 
   font-weight: 500;
 }
 
-/* Блок часу та кнопок прогнозу */
+
 .timeSection {
   display: flex;
   flex-direction: column;
@@ -57,7 +57,7 @@
 }
 
 .currentTime {
-  font-size: 24px; /* Твій розмір часу */
+  font-size: 24px; 
   font-weight: 500;
   line-height: normal;
 }
@@ -164,12 +164,12 @@
   align-items: center;
   gap: 10px;
   border-radius: 10px;
-  background: #ffb36c; /* Твій фон */
+  background: #ffb36c; 
   border: none;
 
   color: #000;
   font-family: "Montserrat Alternates", sans-serif;
-  font-size: 10px; /* Твій розмір тексту кнопок */
+  font-size: 10px; 
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -179,9 +179,7 @@
   background: #f68b26;
 }
 
-/* ==========================================================================
-   2. ПЛАНШЕТ (max-width: 1024px)
-   ========================================================================== */
+
 @media (max-width: 1024px) {
   .card {
     width: 280px;
@@ -190,9 +188,7 @@
   }
 }
 
-/* ==========================================================================
-   3. МОБІЛКА (max-width: 480px)
-   ========================================================================== */
+
 @media (max-width: 480px) {
   .card {
     width: 100%;

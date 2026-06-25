@@ -1,0 +1,169 @@
+
+
+
+.weatherDetailsSection {
+  margin: 40px auto 0 auto;
+  max-width: 1200px;        
+  width: 100%;               
+  box-sizing: border-box;   
+  
+  background-color: #eaeaea; 
+  padding: 32px 24px;
+  border-radius: 32px;       
+  font-family: "Montserrat Alternates", sans-serif;
+  color: #000000;
+}
+
+
+
+.widgetsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+
+.widgetCard {
+  background: #d9d9d9; 
+  padding: 24px 20px;
+  border-radius: 24px;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+
+.widgetTitle {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+
+.widgetValue {
+  font-size: 28px;
+  font-weight: 500;
+  margin: 0 0 14px 0;
+}
+
+
+.minMaxWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.widgetIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.widgetIconWrapper svg {
+  width: 40px;
+  height: 40px;
+}
+
+
+.thermometer svg { color: #ff5a5a; }
+.humidity svg    { color: #4da3ff; }
+.pressure svg    { color: #555555; }
+.wind svg        { color: #78909c; }
+.visibility svg  { color: #2ecc71; }
+
+
+
+.hourlyForecastBlock {
+  background: #d9d9d9;
+  padding: 24px;
+  border-radius: 24px;
+}
+
+.hourlyForecastBlock h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+}
+
+.hourlyForecastList {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding-bottom: 10px;
+}
+
+
+.hourlyForecastList::-webkit-scrollbar {
+  height: 6px;
+}
+.hourlyForecastList::-webkit-scrollbar-thumb {
+  background: #ffb36c;
+  border-radius: 10px;
+}
+
+.hourlyForecastItem {
+  min-width: 85px;
+  text-align: center;
+  background: #eaeaea;
+  padding: 12px 10px;
+  border-radius: 16px;
+  flex-shrink: 0;
+}
+
+.hourlyTime {
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0 0 6px 0;
+}
+
+.hourlyIcon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.hourlyTemp {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 6px 0 0 0;
+}
+
+
+
+@media (max-width: 1024px) {
+  .widgetsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  
+  .weatherDetailsSection {
+    padding: 24px 16px;
+    border-radius: 28px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .widgetsGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .widgetCard {
+    min-height: 140px;
+    padding: 16px;
+  }
+  
+  .widgetValue {
+    font-size: 24px;
+  }
+}
