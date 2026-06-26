@@ -4,32 +4,41 @@
   background-size: cover;
   background-color: rgba(0, 0, 0, 0.48);
   max-width: 1180px;
-  height: 595px;
+  width: 100%;
+  min-height: 500px;
+  height: auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  padding: 40px 20px;
+  box-sizing: border-box;
 }
 
-
-.heroTitle {
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: normal;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 35px;
-}
-
-
-@media screen and (min-width: 704px) {
-  .heroTitle {
-    font-size: 20px;
-    margin-bottom: 40px; 
+@media screen and (min-width: 1180px) {
+  .hero {
+    height: 595px;
+    padding: 0;
   }
 }
 
+.heroTitle {
+  color: #fff;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+@media screen and (min-width: 704px) {
+  .heroTitle {
+    font-size: 32px;
+    margin-bottom: 40px; 
+  }
+}
 
 @media screen and (min-width: 1180px) {
   .heroTitle {
@@ -40,76 +49,136 @@
 
 .heroBox {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 52px;
+  gap: 20px;
+  width: 100%;
+}
+
+@media screen and (min-width: 704px) {
+  .heroBox {
+    flex-direction: row;
+    gap: 40px;
+  }
+}
+
+@media screen and (min-width: 1180px) {
+  .heroBox {
+    gap: 52px;
+  }
 }
 
 .heroText {
   color: #fff;
-  text-align: right;
-  font-family: "Montserrat";
-  font-size: 24px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
   font-weight: 500;
-  line-height: normal;
+  line-height: 1.4;
+  max-width: 320px;
+}
+
+@media screen and (min-width: 704px) {
+  .heroText {
+    text-align: right;
+    font-size: 18px;
+    max-width: 280px;
+  }
+}
+
+@media screen and (min-width: 1180px) {
+  .heroText {
+    font-size: 24px;
+    max-width: 400px;
+  }
 }
 
 .heroLine {
-  width: 1px;
-  height: 80px;
+  width: 60px;
+  height: 2px;
   background-color: #fff;
 }
 
 @media screen and (min-width: 704px) {
   .heroLine {
-      height: 110px;
-      width: 2px;
+    width: 2px;
+    height: 110px;
   }
 }
 
-
 @media screen and (min-width: 1180px) {
-  .heroLine{
-    height: 144px;
+  .heroLine {
     width: 3px;
+    height: 144px;
   }
 }
 
 .heroDate {
   color: #fff;
-  font-family: "Montserrat";
-  font-size: 24px;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-size: 16px;
   font-weight: 700;
   line-height: normal;
 }
+
+@media screen and (min-width: 704px) {
+  .heroDate {
+    text-align: left;
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1180px) {
+  .heroDate {
+    font-size: 24px;
+  }
+}
+
 .heroBoxe {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 80px;
+  margin-top: 40px;
+  width: 100%;      
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 1180px) {
+  .heroBoxe {
+    margin-top: 80px;
+  }
 }
 
 .heroInput {
   color: #878787;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 700;
   line-height: normal;
   border-radius: 10px 0 0 10px;
   background: #d9d9d9;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  padding-left: 29px;
-  padding-right: 426px;
+  padding: 12px 20px;
   border: none;
+  width: 100%;
+  max-width: 450px;  
+  box-sizing: border-box;
 }
 
 .heroButton {
   background: #ffb36c;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 12px 20px;
   border-radius: 0 10px 10px 0;
-  margin-left: 2px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  margin: 0;  
+  margin-left: 1px;      
+}
+.heroButton:hover {
+  background: #f68b26;
 }
